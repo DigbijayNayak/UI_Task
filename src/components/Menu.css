@@ -27,7 +27,7 @@ ion-menu.md ion-list#inbox-list {
 
 ion-menu.md ion-list#inbox-list ion-list-header {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 200;
   min-height: 20px;
 }
 

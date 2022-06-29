@@ -8,11 +8,29 @@ import {
   IonMenu,
   IonMenuToggle,
   IonNote,
-} from '@ionic/react';
+  IonText,
+} from "@ionic/react";
 
-import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
-import './Menu.css';
+import { useLocation } from "react-router-dom";
+import {
+  batteryChargingOutline,
+  batteryChargingSharp,
+  bicycleOutline,
+  bicycleSharp,
+  buildOutline,
+  heart,
+  homeOutline,
+  homeSharp,
+  notificationsOutline,
+  notificationsSharp,
+  peopleOutline,
+  peopleSharp,
+  statsChartOutline,
+  timeOutline,
+  warningOutline,
+  warningSharp,
+} from "ionicons/icons";
+import "./Menu.css";
 
 interface AppPage {
   url: string;
@@ -23,44 +41,54 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: "Dashboard",
+    url: "/page/Dashboard",
+    iosIcon: homeOutline,
+    mdIcon: homeOutline,
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: "Driver",
+    url: "/page/Driver",
+    iosIcon: peopleOutline,
+    mdIcon: peopleOutline,
   },
   {
-    title: 'Favorites',
-    url: '/page/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    title: "Ebike",
+    url: "/page/Ebike",
+    iosIcon: bicycleOutline,
+    mdIcon: bicycleOutline,
   },
   {
-    title: 'Archived',
-    url: '/page/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    title: "Charging Station",
+    url: "/page/Charging Station",
+    iosIcon: batteryChargingOutline,
+    mdIcon: batteryChargingOutline,
   },
   {
-    title: 'Trash',
-    url: '/page/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
+    title: "Trip History",
+    url: "/page/Trip History",
+    iosIcon: timeOutline,
+    mdIcon: timeOutline,
   },
   {
-    title: 'Spam',
-    url: '/page/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
-  }
+    title: "Notification",
+    url: "/page/Notification",
+    iosIcon: notificationsOutline,
+    mdIcon: notificationsOutline,
+  },
+  {
+    title: "Maintenance",
+    url: "/page/Maintenance",
+    iosIcon: buildOutline,
+    mdIcon: buildOutline,
+  },
+  {
+    title: "Stats & Reports",
+    url: "/page/Stats & Reports",
+    iosIcon: statsChartOutline,
+    mdIcon: statsChartOutline,
+  },
 ];
-
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -68,30 +96,34 @@ const Menu: React.FC = () => {
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
-        <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
-          {appPages.map((appPage, index) => {
-            return (
-              <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
-                </IonItem>
-              </IonMenuToggle>
-            );
-          })}
+      <IonList id="inbox-list">
+        <IonListHeader style={{ margin: "auto", color: "#3880ff" }}>
+          Indiglo
+        </IonListHeader>
+        <IonNote style={{ marginRight: "auto" }}>Mobility</IonNote>
+        {appPages.map((appPage, index) => {
+          return (
+            <IonMenuToggle key={index} autoHide={false}>
+              <IonItem
+                className={location.pathname === appPage.url ? "selected" : ""}
+                routerLink={appPage.url}
+                routerDirection="none"
+                lines="none"
+                detail={false}
+              >
+                <IonIcon
+                  slot="start"
+                  ios={appPage.iosIcon}
+                  md={appPage.mdIcon}
+                />
+                <IonLabel>{appPage.title}</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          );
+        })}
         </IonList>
-
-        <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList>
+        <IonText>Indigo Admin Dashboard<br/>
+        Made with <IonIcon icon={heart}></IonIcon> by PeopleTech Designers</IonText>
       </IonContent>
     </IonMenu>
   );
