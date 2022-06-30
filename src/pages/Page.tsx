@@ -154,7 +154,7 @@ const Page: React.FC = () => {
           style={{ marginBottom: "16px", marginLeft: "16px", display: "flex" }}
         >
           <IonSearchbar
-            style={{ width: "700px" }}
+            style={{ width: "900px" }}
             placeholder={"Search Driver or Ebike"}
           ></IonSearchbar>
           <IonIcon
@@ -171,9 +171,9 @@ const Page: React.FC = () => {
         <IonList>
           <IonItem id="item">
             <IonSelect placeholder="All&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
-              <IonSelectOption value="apples">Apples</IonSelectOption>
-              <IonSelectOption value="oranges">Oranges</IonSelectOption>
-              <IonSelectOption value="bananas">Bananas</IonSelectOption>
+              <IonSelectOption value="apples">IND-001-123456</IonSelectOption>
+              <IonSelectOption value="oranges">IND-001-123456</IonSelectOption>
+              <IonSelectOption value="bananas">IND-001-123456</IonSelectOption>
             </IonSelect>
             <IonSelect id="select" placeholder="Add E-bike +"></IonSelect>
           </IonItem>
@@ -182,6 +182,7 @@ const Page: React.FC = () => {
         <IonCard>
           <IonCardContent>
             <IonGrid>
+              <IonRow id="title">All E-bikes</IonRow>
               <IonRow style={{ color: "black" }}>
                 <IonCol>E-bike Number</IonCol>
                 <IonCol>Current Driver</IonCol>
@@ -198,12 +199,14 @@ const Page: React.FC = () => {
                       <IonAvatar>
                         <IonImg src={Data.img} />
                       </IonAvatar>
-                      <IonText>{Data.driver}</IonText>
+                      <IonText id="size">{Data.driver}</IonText>
                     </IonCol>
                     <IonCol>{Data.location}</IonCol>
                     <IonCol>{Data.weight}</IonCol>
                     <IonCol>{Data.batteryStatus}</IonCol>
-                    <IonCol>{Data.status}</IonCol>
+                    {
+                      Data.status == 'Active' ? <IonCol><IonItem id="active" color={"tertiary"}>{Data.status}</IonItem></IonCol> : <IonCol><IonItem id="inactive" color={"medium"}>{Data.status}</IonItem></IonCol>
+                    }
                   </IonRow>
                 );
               })}

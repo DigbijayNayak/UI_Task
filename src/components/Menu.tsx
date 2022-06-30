@@ -1,4 +1,5 @@
 import {
+  IonCard,
   IonContent,
   IonGrid,
   IonIcon,
@@ -95,7 +96,7 @@ const Menu: React.FC = () => {
   const location = useLocation();
 
   return (
-    <IonMenu contentId="main" type="overlay">
+    <IonMenu contentId="main" type="overlay" style={{width:"100px"}}>
       <IonContent>
         <IonGrid>
           {/* <IonList id="inbox-list"> */}
@@ -128,7 +129,7 @@ const Menu: React.FC = () => {
           {/* </IonList> */}
         </IonGrid>
 
-        <IonText id="ftitle">
+        <IonText id="ftitle" style={{position:"absolute", bottom:"10px", margin:"auto"}}>
           Indigo Admin Dashboard
           <br />
           Made with <IonIcon icon={heart}></IonIcon> by PeopleTech Designers

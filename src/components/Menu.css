@@ -117,9 +117,6 @@ ion-text {
   margin: auto;
 }
 
-#ftitle {
-  top: auto;
-  /* bottom: 0; */
-  /* float: right; */
-  margin: auto;
+#ftitle{
+font-size: 12px;
 }
