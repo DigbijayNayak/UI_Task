@@ -1,4 +1,4 @@
-.notification{
+.notification {
     margin-left: 100px;
     margin-top: 10px;
     font-size: 40px;
@@ -13,30 +13,59 @@
     vertical-align: center;
     text-align: center;
 } */
-button{
+button {
     border-radius: 2opx;
 }
-ion-row, ion-col{
+
+ion-row,
+ion-col {
     padding: 10px;
 }
 
-ion-row{
+ion-row {
     border: 1px solid #fbfcfd;
 }
 
-ion-col{
+ion-col {
     text-align: center;
 }
 
-ion-img{
+ion-img {
     border-radius: 100px;
     margin-right: 10px;
 }
 
-ion-button{
+ion-button {
     margin-top: 10px;
+    margin-left: 30px;
 }
-ion-avatar{
+
+ion-avatar {
     /* --border-radius:var(--border-radius); */
     /* margin-right: 10px; */
+}
+
+img {
+    margin-left: 10px;
+}
+
+ion-text {
+    text-align: center;
+}
+
+#select {
+    background-color: blue;
+}
+
+ion-select {
+    /* float: right; */
+    height: 30px;
+    margin-right: 50px;
+    border: 1px solid #17497c;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+#item {
+    float: right;
 }

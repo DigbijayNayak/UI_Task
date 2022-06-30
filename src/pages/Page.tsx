@@ -11,10 +11,15 @@ import {
   IonIcon,
   IonImg,
   IonInput,
+  IonItem,
+  IonList,
   IonMenuButton,
   IonPage,
   IonRow,
   IonSearchbar,
+  IonSelect,
+  IonSelectOption,
+  IonText,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -40,7 +45,7 @@ interface Data {
 const data: Data[] = [
   {
     bikeNo: "IND-001-123456",
-    img: "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=40&q=40",
+    img: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=40&q=40",
     driver: "Samanta Wiliam",
     location: "Hitech City",
     weight: "4.45kg",
@@ -67,7 +72,7 @@ const data: Data[] = [
   },
   {
     bikeNo: "IND-001-123973",
-    img: "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=40&q=40",
+    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=40&q=40",
     driver: "Nella Vita",
     location: "Monikonda",
     weight: "1.45kg",
@@ -85,7 +90,7 @@ const data: Data[] = [
   },
   {
     bikeNo: "IND-001-125546",
-    img: "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=40&q=40",
+    img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=40&q=40",
     driver: "Amara Vera",
     location: "Jubliee Hills",
     weight: "4.23kg",
@@ -103,7 +108,7 @@ const data: Data[] = [
   },
   {
     bikeNo: "IND-001-123645",
-    img: "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=40&q=40",
+    img: "https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=40&q=40",
     driver: "Jonas Red",
     location: "Hitech City",
     weight: "5.09kg",
@@ -163,6 +168,17 @@ const Page: React.FC = () => {
         </div>
         <ExploreContainer name={name} />
 
+        <IonList>
+          <IonItem id="item">
+            <IonSelect placeholder="All&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+              <IonSelectOption value="apples">Apples</IonSelectOption>
+              <IonSelectOption value="oranges">Oranges</IonSelectOption>
+              <IonSelectOption value="bananas">Bananas</IonSelectOption>
+            </IonSelect>
+            <IonSelect id="select" placeholder="Add E-bike +"></IonSelect>
+          </IonItem>
+        </IonList>
+
         <IonCard>
           <IonCardContent>
             <IonGrid>
@@ -182,7 +198,7 @@ const Page: React.FC = () => {
                       <IonAvatar>
                         <IonImg src={Data.img} />
                       </IonAvatar>
-                      {Data.driver}
+                      <IonText>{Data.driver}</IonText>
                     </IonCol>
                     <IonCol>{Data.location}</IonCol>
                     <IonCol>{Data.weight}</IonCol>

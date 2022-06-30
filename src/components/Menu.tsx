@@ -1,5 +1,6 @@
 import {
   IonContent,
+  IonGrid,
   IonIcon,
   IonItem,
   IonLabel,
@@ -96,34 +97,42 @@ const Menu: React.FC = () => {
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
-      <IonList id="inbox-list">
-        <IonListHeader style={{ margin: "auto", color: "#3880ff" }}>
-          Indiglo
-        </IonListHeader>
-        <IonNote style={{ marginRight: "auto" }}>Mobility</IonNote>
-        {appPages.map((appPage, index) => {
-          return (
-            <IonMenuToggle key={index} autoHide={false}>
-              <IonItem
-                className={location.pathname === appPage.url ? "selected" : ""}
-                routerLink={appPage.url}
-                routerDirection="none"
-                lines="none"
-                detail={false}
-              >
-                <IonIcon
-                  slot="start"
-                  ios={appPage.iosIcon}
-                  md={appPage.mdIcon}
-                />
-                <IonLabel>{appPage.title}</IonLabel>
-              </IonItem>
-            </IonMenuToggle>
-          );
-        })}
-        </IonList>
-        <IonText>Indigo Admin Dashboard<br/>
-        Made with <IonIcon icon={heart}></IonIcon> by PeopleTech Designers</IonText>
+        <IonGrid>
+          {/* <IonList id="inbox-list"> */}
+          <IonListHeader style={{ margin: "auto", color: "#3880ff" }}>
+            Indiglo
+          </IonListHeader>
+          <IonNote style={{ marginRight: "auto" }}>Mobility</IonNote>
+          {appPages.map((appPage, index) => {
+            return (
+              <IonMenuToggle key={index} autoHide={false}>
+                <IonItem
+                  className={
+                    location.pathname === appPage.url ? "selected" : ""
+                  }
+                  routerLink={appPage.url}
+                  routerDirection="none"
+                  lines="none"
+                  detail={false}
+                >
+                  <IonIcon
+                    slot="start"
+                    ios={appPage.iosIcon}
+                    md={appPage.mdIcon}
+                  />
+                  <IonLabel>{appPage.title}</IonLabel>
+                </IonItem>
+              </IonMenuToggle>
+            );
+          })}
+          {/* </IonList> */}
+        </IonGrid>
+
+        <IonText id="ftitle">
+          Indigo Admin Dashboard
+          <br />
+          Made with <IonIcon icon={heart}></IonIcon> by PeopleTech Designers
+        </IonText>
       </IonContent>
     </IonMenu>
   );
