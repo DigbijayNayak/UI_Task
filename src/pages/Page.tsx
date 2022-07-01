@@ -170,7 +170,7 @@ const Page: React.FC = () => {
 
         <IonList>
           <IonItem id="item">
-            <IonSelect placeholder="All&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+            <IonSelect placeholder="All&nbsp;&nbsp;&nbsp;&nbsp;">
               <IonSelectOption value="apples">IND-001-123456</IonSelectOption>
               <IonSelectOption value="oranges">IND-001-123456</IonSelectOption>
               <IonSelectOption value="bananas">IND-001-123456</IonSelectOption>
@@ -183,7 +183,7 @@ const Page: React.FC = () => {
           <IonCardContent>
             <IonGrid>
               <IonRow id="title">All E-bikes</IonRow>
-              <IonRow style={{ color: "black" }}>
+              <IonRow style={{ fontWeight: "bold"}}>
                 <IonCol>E-bike Number</IonCol>
                 <IonCol>Current Driver</IonCol>
                 <IonCol>Location</IonCol>
@@ -203,9 +203,12 @@ const Page: React.FC = () => {
                     </IonCol>
                     <IonCol>{Data.location}</IonCol>
                     <IonCol>{Data.weight}</IonCol>
-                    <IonCol>{Data.batteryStatus}</IonCol>
                     {
-                      Data.status == 'Active' ? <IonCol><IonItem id="active" color={"tertiary"}>{Data.status}</IonItem></IonCol> : <IonCol><IonItem id="inactive" color={"medium"}>{Data.status}</IonItem></IonCol>
+                      parseInt(Data.batteryStatus.substring(0, 2)) >= 50 ? <IonCol style={{color: "green"}}>{Data.batteryStatus}</IonCol> : <IonCol style={{color: "red"}}>{Data.batteryStatus}</IonCol>
+                    }
+                    {/* <IonCol>{Data.batteryStatus}</IonCol> */}
+                    {
+                      Data.status == 'Active' ? <IonCol><IonItem id="active" color={"tertiary"}><IonText style={{marginBottom: "23px"}}>{Data.status}</IonText></IonItem></IonCol> : <IonCol><IonItem id="inactive" color={"medium"}><IonText style={{marginBottom: "23px"}}>{Data.status}</IonText></IonItem></IonCol>
                     }
                   </IonRow>
                 );

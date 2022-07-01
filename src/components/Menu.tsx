@@ -132,6 +132,7 @@ const Menu: React.FC = () => {
         <IonText id="ftitle" style={{position:"absolute", bottom:"10px", margin:"auto"}}>
           Indigo Admin Dashboard
           <br />
+          <br />
           Made with <IonIcon icon={heart}></IonIcon> by PeopleTech Designers
         </IonText>
       </IonContent>

@@ -20,14 +20,12 @@ button {
 ion-row,
 ion-col {
     padding: 10px;
+    text-align: center;
+    color: black;
 }
 
 ion-row {
     border: 1px solid #fbfcfd;
-}
-
-ion-col {
-    text-align: center;
 }
 
 ion-img {
@@ -36,6 +34,7 @@ ion-img {
 }
 #size{
     margin-left: 30px;
+    margin-bottom: 5px;
 }
 
 ion-button {
@@ -76,7 +75,10 @@ ion-select {
 }
 
 #item {
+
     float: right;
+    font-size: 10px;
+    text-align: center;
 }
 
 #title{
@@ -85,11 +87,17 @@ ion-select {
 }
 #active{
     margin: auto;
-    /* width: 100px; */
-    border-radius: 20px;
+    width: 40%;
+    height: 30px;
+    font-size: 10px;
+    justify-content: center;
+    border-radius: 10px;
 }
 #inactive{
     margin: auto;
-    /* width: 100px; */
-    border-radius: 20px;
+    width: 40%;
+    height: 30px;
+    font-size: 10px;
+    justify-content: center;
+    border-radius: 10px;
 }
